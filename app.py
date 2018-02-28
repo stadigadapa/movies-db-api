@@ -74,15 +74,10 @@ def processRequest(req):
 def makeYqlQuery(req):
     result = req.get("result")
     parameters = result.get("parameters")
-    city = parameters.get("geo-city")
-    njspUniqIdentifier = parameters.get("njspUniqIdentifier")
-    lastName = parameters.get("lastName")
-    firstName = parameters.get("firstName")
-    dateOfBirth = parameters.get("dateOfBirth")
-    ssn = parameters.get("ssn")
-    	
+    movieName = parameters.get("movieName")
+    year = parameters.get("year")	
 	
-    if lastName is None:
+    if movieName is None:
         return None
 
     return "Success"
