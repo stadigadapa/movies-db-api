@@ -51,9 +51,9 @@ def webhook():
 
 def processRequest(req):
     print("Inside processRequest Request:"+req.get("result").get("action"))
-    if req.get("result").get("action") != "search":
+    if req.get("result").get("action") != "team":
         return {}
-    baseurl = "http://www.omdbapi.com/?i=tt3896198&apikey=b07e37ef"
+    baseurl = "NflArrest.com/api/v1/team"
 	
     print("baseurl:"+baseurl)
     yql_query = makeYqlQuery(req)
@@ -65,7 +65,8 @@ def processRequest(req):
     
     result = urlopen(baseurl).read()
     print("result:"+result)
-    data = json.loads(result)
+    data = json.loads(resu    parameters = result.get("parameters")
+lt)
     res = makeWebhookResult(data)
     print("res:"+res)
     return res
@@ -74,10 +75,12 @@ def processRequest(req):
 def makeYqlQuery(req):
     result = req.get("result")
     parameters = result.get("parameters")
-    s = parameters.get("s")
-    y = parameters.get("y")	
+    start_date = parameters.get("start_date")
+    end_date = parameters.get("end_date")
+    limit = parameters.get("limit")
+    star_pos = parameters.get("star_pos")
 	
-    if t is None:
+    if start_date is None:
         return None
 
     return "Success"
