@@ -53,7 +53,7 @@ def processRequest(req):
     print("Inside processRequest Request:"+req.get("result").get("action"))
     if req.get("result").get("action") != "team":
         return {}
-    baseurl = "NflArrest.com/api/v1/team"
+    baseurl = "http://NflArrest.com/api/v1/team"
 	
     print("baseurl:"+baseurl)
     yql_query = makeYqlQuery(req)
