@@ -1,0 +1,7 @@
+{
+  "name": "Movies webhook demonstration",
+  "description": "Movies webhook demonstration",
+  "repository": "https://github.com/stadigadapa/Movies",
+  "logo": "http://xvir.github.io/img/apiai.png",
+  "keywords": ["api.ai", "natural language"]
+}
