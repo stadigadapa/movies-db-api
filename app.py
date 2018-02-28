@@ -74,8 +74,8 @@ def processRequest(req):
 def makeYqlQuery(req):
     result = req.get("result")
     parameters = result.get("parameters")
-    s = parameters.get("movieName")
-    y = parameters.get("year")	
+    s = parameters.get("s")
+    y = parameters.get("y")	
 	
     if t is None:
         return None
