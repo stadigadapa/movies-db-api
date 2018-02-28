@@ -53,7 +53,7 @@ def processRequest(req):
     print("Inside processRequest Request:"+req.get("result").get("action"))
     if req.get("result").get("action") != "search":
         return {}
-    baseurl = "https://www.themoviedb.org/"
+    baseurl = "http://www.omdbapi.com/?i=tt3896198&apikey=b07e37ef"
 	
     print("baseurl:"+baseurl)
     yql_query = makeYqlQuery(req)
@@ -74,10 +74,10 @@ def processRequest(req):
 def makeYqlQuery(req):
     result = req.get("result")
     parameters = result.get("parameters")
-    movieName = parameters.get("movieName")
-    year = parameters.get("year")	
+    s = parameters.get("movieName")
+    y = parameters.get("year")	
 	
-    if movieName is None:
+    if t is None:
         return None
 
     return "Success"
