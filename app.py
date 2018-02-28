@@ -65,8 +65,7 @@ def processRequest(req):
     
     result = urlopen(baseurl).read()
     print("result:"+result)
-    data = json.loads(resu    parameters = result.get("parameters")
-lt)
+    data = json.loads(result)
     res = makeWebhookResult(data)
     print("res:"+res)
     return res
@@ -78,7 +77,7 @@ def makeYqlQuery(req):
     start_date = parameters.get("start_date")
     end_date = parameters.get("end_date")
     limit = parameters.get("limit")
-    star_pos = parameters.get("star_pos")
+    star_pos = parameters.get("star_pos")	
 	
     if start_date is None:
         return None
